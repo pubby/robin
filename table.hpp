@@ -346,6 +346,15 @@ public:
         realloc(new_size);
     }
 
+    apair<hash_type const*, value_type const*> any() const
+    {
+        hash_type const size = allocated_size();
+        for(hash_type i = 0; i != size; ++i)
+            if(hashes[i] != 0)
+                return { hash_data() + i, value_data() + i };
+        return { nullptr, nullptr };
+    }
+
     hash_type const* hash_data() const { return hashes; }
     hash_type* hash_data() { return hashes; }
 

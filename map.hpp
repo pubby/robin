@@ -90,6 +90,9 @@ public:
             [&](){ return value_type{ std::forward<K>(k), mconstruct() }; });
     }
 
+    value_type const* any() const { return collection.any(); }
+    value_type* any() { return collection.any(); }
+
     value_type const* find(key_type const& k) const
     { 
         return collection.find(k);
@@ -173,6 +176,9 @@ public:
         return collection.emplace(k,
             [&](){ return value_type{ std::forward<K>(k), mconstruct() }; });
     }
+
+    value_type const* any() const { return collection.any(); }
+    value_type* any() { return collection.any(); }
 
     value_type const* find(key_type const& k) const
     { 
@@ -263,6 +269,9 @@ public:
         return collection.emplace(k,
             [&](){ return value_type{ std::forward<K>(k), mconstruct() }; });
     }
+
+    value_type const* any() const { return collection.any(); }
+    value_type* any() { return collection.any(); }
 
     value_type const* find(key_type const& k) const
     { 

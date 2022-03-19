@@ -96,6 +96,9 @@ public:
         table.swap(o.table);
     }
 
+    value_type const* any() const { return table.any().second; }
+    value_type* any() { return table.any().second; }
+
     friend void swap(robin_collection& a, robin_collection& b) noexcept 
     {
         a.swap(b);

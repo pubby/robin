@@ -61,6 +61,9 @@ public:
         return { pair.first, pair.second };
     }
 
+    value_type const* any() const { return collection.any(); }
+    value_type* any() { return collection.any(); }
+
     value_type const* find(key_type const& k) const
     { 
         return collection.find(k);
@@ -116,6 +119,9 @@ public:
         apair<value_type*, bool> pair = collection.insert(std::move(k)); 
         return { pair.first, pair.second };
     }
+
+    value_type const* any() const { return collection.any(); }
+    value_type* any() { return collection.any(); }
 
     value_type const* find(key_type const& k) const
     { 
@@ -178,6 +184,9 @@ public:
         apair<value_type*, bool> pair = collection.insert(std::move(k)); 
         return { pair.first, pair.second };
     }
+
+    value_type const* any() const { return collection.any(); }
+    value_type* any() { return collection.any(); }
 
     value_type const* find(key_type const& k) const
     { 
